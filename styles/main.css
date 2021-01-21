@@ -1,0 +1,145 @@
+@font-face {
+    font-family: Electrolize;
+    src: url(Electrolize.ttf);
+}
+html, body{
+    font-family: Electrolize, -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+}
+body::-webkit-scrollbar {
+    width: 0.5rem;
+    background-color: black;
+}
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #7D7D7D;
+}
+.frontpage {
+    height: 100%;
+    background-color: #286295;
+    background-image: url(MountainRoadFooter.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+}
+.contactbox-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.contactbox {
+    position: absolute;
+    top: 30%;
+    color: white;
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+    height: 200px;
+    background-color: #146850;
+    border: 3px solid white;
+    border-radius: 5px;
+    line-height: 35px;
+}
+button {
+    background-color: #146850;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    border: 3px solid white;
+    border-radius: 5px;
+}
+button:hover {
+    cursor: pointer;
+    background-color: white;
+    color: #146850;
+    border: 3px solid #146850;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.child {
+    min-height: 550px;
+    background: whitesmoke;
+    flex: 100%;
+    text-align: center;
+    border: 25px solid whitesmoke;
+}
+.child-text {
+  margin-top: 5% !important;
+}
+h2 {
+  font-size: 2rem;
+}
+p {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+a {
+  text-decoration: none !important;
+}
+.projbox {
+    background-color: #343a40;
+    width: 400px;
+    height: 250px;
+    border-radius: 21px 21px 21px 21px;
+    margin-top: 10% !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+.projpic {
+    height: 250px;
+    width: 400px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.projboxinfo {
+    font-size: medium;
+    color: white;
+    cursor: pointer;
+    width: auto;
+    position: relative;
+    top: -65%;
+    font-size: 28px;
+}
+.projboxinfo p {
+    display: none;
+}
+.projbox:hover p{
+    background-color: #343a40;
+    display: block;
+}   
+* {
+    box-sizing: border-box;
+}
+@media (min-width: 768px) {
+    .child {
+        flex: calc(100% / 2);
+    }
+}
+@media only screen and (max-width: 500px) {
+    .projpic {
+        height: 250px;
+        width: 350px;
+        padding: 10px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .projbox {
+        width: 350px !important;
+    }
+}
+@media only screen and (max-width: 901px) {
+    .projbox:hover p{
+        display: none;
+    } 
+}
