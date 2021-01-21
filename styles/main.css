@@ -4,8 +4,8 @@
 }
 html, body{
     font-family: Electrolize, -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     height: 100%;
 }
 body::-webkit-scrollbar {
@@ -23,7 +23,7 @@ body::-webkit-scrollbar-thumb {
     background-color: #286295;
     background-image: url(MountainRoadFooter.svg);
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: 50% 100%;
     background-size: contain;
 }
 .contactbox-container {
@@ -60,14 +60,24 @@ button:hover {
     cursor: pointer;
     background-color: white;
     color: #146850;
-    border: 3px solid #146850;
+}
+.sideprojects{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+    line-height: 100px;
+    font-size: 3rem;
+    font-weight: 900;
+    color: white;
+    background-color: #146850;
+    border: 3px solid white;
 }
 .container {
     display: flex;
     flex-wrap: wrap;
 }
 .child {
-    min-height: 550px;
     background: whitesmoke;
     flex: 100%;
     text-align: center;
@@ -91,7 +101,7 @@ a {
     width: 400px;
     height: 250px;
     border-radius: 21px 21px 21px 21px;
-    margin-top: 10% !important;
+    margin-top: 50px !important;
     margin-right: auto !important;
     margin-left: auto !important;
 }
@@ -142,4 +152,17 @@ a {
     .projbox:hover p{
         display: none;
     } 
+}
+#rplogo {
+    height: 10%;
+    width: 10%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+footer {
+    padding-top: 50px;
+    background-color: #146850;
+    text-align: center;
+    color: white;
 }
