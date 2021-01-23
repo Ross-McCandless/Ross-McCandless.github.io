@@ -1,0 +1,61 @@
+html, body, #viewDiv {
+    padding: 0;
+    margin: 0;
+    height: 97%;
+    width: 100%;
+  }
+
+#top-header {
+    width: 100%;
+    background-image: linear-gradient(-90deg, red, yellow);
+    color: black;
+    text-align: center;
+    font-weight: bolder;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+
+.visible {
+  display: block !important;
+}
+
+#loadingDiv{
+  position: absolute;
+  margin-top: 7vh;
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: black;
+  color: white;
+  display: none;
+  opacity: 0.8;
+}
+
+#loadingDiv-content{
+  position: relative;
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  margin: auto;
+  margin-top: 35vh;
+  transform: rotate(45deg);
+  animation: spin 2s infinite;
+}
+
+@keyframes spin {
+  0%{
+      transform: rotate(90deg);
+  }
+  25% {
+      transform: rotate(180deg);
+  }
+  50%{
+      transform: rotate(270deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}

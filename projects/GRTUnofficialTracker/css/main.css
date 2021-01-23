@@ -1,0 +1,59 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+#mapid {
+    height: 100%;
+    width: 100vw;
+    z-index: 1 !important;
+}
+
+#list {
+    position: absolute;
+    z-index: 2;
+    bottom: 1vh;
+    left: 0.5%;
+    display: block;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: black;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: .5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    width: 175px;
+    background-position: 130px 50%;
+    background-repeat: no-repeat;
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDMzMCAzMzAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDMzMCAzMzA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGlkPSJYTUxJRF8yMjRfIiBkPSJNMzI1LjYwNiwyMjkuMzkzbC0xNTAuMDA0LTE1MEMxNzIuNzksNzYuNTgsMTY4Ljk3NCw3NSwxNjQuOTk2LDc1Yy0zLjk3OSwwLTcuNzk0LDEuNTgxLTEwLjYwNyw0LjM5NA0KCWwtMTQ5Ljk5NiwxNTBjLTUuODU4LDUuODU4LTUuODU4LDE1LjM1NSwwLDIxLjIxM2M1Ljg1Nyw1Ljg1NywxNS4zNTUsNS44NTgsMjEuMjEzLDBsMTM5LjM5LTEzOS4zOTNsMTM5LjM5NywxMzkuMzkzDQoJQzMwNy4zMjIsMjUzLjUzNiwzMTEuMTYxLDI1NSwzMTUsMjU1YzMuODM5LDAsNy42NzgtMS40NjQsMTAuNjA3LTQuMzk0QzMzMS40NjQsMjQ0Ljc0OCwzMzEuNDY0LDIzNS4yNTEsMzI1LjYwNiwyMjkuMzkzeiIvPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=');
+}
+
+@media only screen and (max-width: 500px) {
+    #list {
+        bottom: 11vh;
+    }
+}
+
+.Info {
+    margin: 0;
+    padding: 5px;
+    border-radius: 5px;
+    border:8px;
+    font-weight: bold;
+    color: black;
+    background: #ffeba3;
+    text-align: center;
+}
+

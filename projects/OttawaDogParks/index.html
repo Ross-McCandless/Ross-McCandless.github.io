@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <title>Ottawa Dog Parks</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet-src.js"></script>
+
+  <!-- Esri Leaflet -->
+  <script src="https://unpkg.com/esri-leaflet@2.0.7"></script>
+
+  <style>
+    body {margin:0; padding:0; height:100%; width:100%;}
+    #map {position: absolute; top:0; bottom:0; right:0; left:0; }
+    .btn {width: 100%; height: 25%; float: right; margin-right: 1px; opacity: 1; border-style: solid; border-radius: 7px; font-weight: bold; border:3px solid #000000;}
+    .Info {margin: 0; padding: 5px; border-style: solid; border-radius: 7px; border:3px solid #000000; background-color: #F9F9F9; font-weight: bold;}
+  </style>
+</head>
+
+<body>
+  <script src="https://unpkg.com/esri-leaflet-vector"></script>
+  <script src="https://unpkg.com/esri-leaflet-renderers@2.0.2"></script>
+  <div id="map"></div>
+  <script>
+    // VARIABLES - to be used throughout the script
+    var colours = ['#000000', '#55FF00','#D3FFBE','#FFFF73','#FF0000'];
+    var labels = ['LEGEND', 'DOGS ALLOWED', 'LEASH', 'MIXED', 'NO DOGS'];
+    var label_colour = ['#FFFFFF', '#000000', '#000000', '#000000', '#000000'];
+
+    // MAP CONTAINER + BASEMAP
+    var map = L.map('map', {
+      center: [45.416667, -75.683333],
+      zoom: 13,
+      zoomControl: false,
+      closePopupOnClick: false
+
+    });
+    
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 19
+      }).addTo(map);
+
+
+
+    var InfoBox = L.control({position: 'topleft'});
+    InfoBox.onAdd = function(map){
+      var div = L.DomUtil.create('div', 'info legend');
+            div.innerHTML = '<p class="Info"><b><big>A Leaflet Map of Ottawa\'s Dog Parks</big><b><br><br>- Click the legend items to ISOLATE<br>- Scroll to ZOOM<br>- Click on features to get more details<br><br> Made by <a href="https://www.linkedin.com/in/rossmccandless/">Ross McCandless</a></p>'
+            return div;
+          };
+    InfoBox.addTo(map);
+
+    // OTTAWA PARKS - createPane is so it's the top layer.
+    map.createPane('TheTop');
+    var parks = L.esri.featureLayer({
+      url: "https://services7.arcgis.com/1aGVm3EE0wqsincd/ArcGIS/rest/services/Ottawa_Parks/FeatureServer/0",
+      pane: 'TheTop',
+      where: ""
+    }).addTo(map);
+    parks.bindPopup(function (evt) {
+      return L.Util.template('<p><center><b>{NAME}</b></center><br><b>DOG RULES: </b>{DOG_DESIGN}<br><b>ADDRESS:</b> {ADDRESS}<br> <b>DETAILS: </b> {DETAILS}</p>', evt.feature.properties);
+    });
+
+    // Highlight on hover and remove highlight after panning away
+    var OldId;
+    parks.on('mouseover', function(x){
+      OldId = x.layer.feature.id;
+      parks.setFeatureStyle(OldId, {
+        color: '#42f4ee',
+        weight: 3,
+        opacity: 1
+      });
+    });
+    parks.on('mouseout', function(x){
+      parks.resetFeatureStyle(OldId);
+    });
+
+    // PARKS FILTER
+    var where_list = [];
+    function UpdateWhere(item) {
+      index = labels.indexOf(item);
+      if (item !== "LEGEND"){
+        buttonClicked  = document.getElementById(item);
+        if (where_list.includes(item)) {
+          var wi = where_list.indexOf(item);
+          where_list.splice(wi,1);
+          buttonClicked.style.color = "#000000";
+          buttonClicked.style.background = colours[index];
+          buttonClicked.style.borderColor = "#000000";
+        }
+        else {
+          where_list.push(item);
+          buttonClicked.style.color = colours[index];
+          buttonClicked.style.background = "#000000";
+          buttonClicked.style.borderColor = colours[index];
+        }
+      }
+      where_statement = "";
+      for (var i = 0; i < where_list.length; i++) {
+        if (where_list.length === 1){
+          where_statement += "DOG_DESIGN=" + "'" + where_list[0] + "'";
+        }
+        else if (i+1 === where_list.length) {
+          where_statement += "DOG_DESIGN=" + "'" + where_list[i] + "'";
+        }
+        else {
+          where_statement += "DOG_DESIGN=" + "'" + where_list[i] + "' or ";
+        }
+      }
+      parks.setWhere(where_statement)
+    };
+
+    // OTTAWA BOUNDARY 
+    var boundary = L.esri.featureLayer({
+      url: "https://services7.arcgis.com/1aGVm3EE0wqsincd/ArcGIS/rest/services/Ottawa_Boundary/FeatureServer/0"
+    }).addTo(map);
+
+    // LEGEND
+    var legend = L.control({position: 'topright'});
+    legend.onAdd = function(map){
+      var div = L.DomUtil.create('div', 'info legend');
+        for (var i = 0; i < colours.length; i++) {
+            div.innerHTML += 
+            '<button id="'+ labels[i] +'"; class="btn"' + '; style="background-color:' + colours[i] + '; color:' + label_colour[i] + '"; onclick="UpdateWhere(' + "'" + labels[i] + "'" +');">' + '<span>' + labels[i] + '</span></button><br>'
+        }
+        return div;
+    };
+    legend.addTo(map);
+  </script>
+</body>
+</html>
