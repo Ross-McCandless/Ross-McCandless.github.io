@@ -72,7 +72,7 @@ button:hover {
     border: 4px solid black;
     border-radius: 10px;
     box-shadow: 0 0 0 2pt #FFE600;
-    line-height: 100px;
+    padding: 10px;
     font-size: 3rem;
     font-weight: 600;
     color: black;
@@ -195,6 +195,9 @@ a {
     .projbox {
         width: 350px !important;
     }
+    .frontpage {
+        background-position: 50% 100%;
+    }
 }
 @media only screen and (max-width: 901px) {
     .projbox:hover p{
@@ -210,6 +213,7 @@ a {
 }
 footer {
     padding-top: 30px;
+    padding-bottom: 30px;
     text-align: center;
     background-color: black;
     color: white;
