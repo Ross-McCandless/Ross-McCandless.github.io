@@ -7,6 +7,7 @@ html, body{
     padding: 0;
     margin: 0;
     height: 100%;
+    background-color: #222C43;
 }
 body::-webkit-scrollbar {
     width: 0.5rem;
@@ -20,10 +21,9 @@ body::-webkit-scrollbar-thumb {
 }
 .frontpage {
     height: 100%;
-    background-color: #286295;
-    background-image: url(MountainRoadFooter.svg);
+    background-image: url(MountainRoadFooter.svg), linear-gradient(180deg, #1C4366,#286295,whitesmoke);;
     background-repeat: no-repeat;
-    background-position: 50% 100%;
+    background-position: 50% 101%;
     background-size: contain;
 }
 .contactbox-container {
@@ -44,7 +44,8 @@ body::-webkit-scrollbar-thumb {
     width: 350px;
     height: 200px;
     background-color: #146850;
-    border: 3px solid white;
+    border: 4px solid white;
+    box-shadow: 0 0 0 4pt #146850;
     border-radius: 5px;
     line-height: 35px;
 }
@@ -63,41 +64,88 @@ button:hover {
 }
 .sideprojects{
     text-align: center;
+    width: 320px;
+    margin-top: 30px;
+    margin-bottom: 12px;
     margin-left: auto;
     margin-right: auto;
-    width: 350px;
+    border: 4px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 0 2pt #FFE600;
     line-height: 100px;
     font-size: 3rem;
-    font-weight: 900;
-    color: white;
+    font-weight: 600;
+    color: black;
+    background-color: #FFE600;
+}
+#scrollTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 99;
+    border-radius: 4px;
+    background-color: #FFE600;
+    border: 2px solid black;
+    box-shadow: 0 0 0 2pt #FFE600;
+}
+#scrollTopBtn:hover {
     background-color: #146850;
-    border: 3px solid white;
+    border: 2px solid white;
+    box-shadow: 0 0 0 2pt #146850;
+}
+#scrollTopBtn img{
+    filter: invert(1);
+    -webkit-filter: invert(1);
+}
+#scrollTopBtn img:hover{
+    filter: invert(0);
+    -webkit-filter: invert(0);
 }
 .container {
     display: flex;
     flex-wrap: wrap;
 }
+.zoom-in {
+    animation-name: zoom-in-effect;
+    animation-duration: 1s;
+}
+@keyframes zoom-in-effect {
+    0% {
+        transform: scale(0.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
 .child {
-    background: whitesmoke;
+    background: #222C43;
     flex: 100%;
     text-align: center;
-    border: 25px solid whitesmoke;
+    border: 25px solid #222C43;
+    opacity: 0;
 }
 .child-text {
   margin-top: 5% !important;
 }
 h2 {
   font-size: 2rem;
+  color: #87CFEA;
 }
 p {
   font-size: 1.25rem;
   font-weight: 300;
+  color: whitesmoke;
 }
 a {
-  text-decoration: none !important;
+  color: #286295;
+}
+.projbox a {
+    text-decoration: none;
 }
 .projbox {
-    background-color: #343a40;
+    background-color: black;
     width: 400px;
     height: 250px;
     border-radius: 21px 21px 21px 21px;
@@ -125,7 +173,7 @@ a {
     display: none;
 }
 .projbox:hover p{
-    background-color: #343a40;
+    background-color: black;
     display: block;
 }   
 * {
@@ -161,8 +209,8 @@ a {
     margin-right: auto;
 }
 footer {
-    padding-top: 50px;
-    background-color: #146850;
+    padding-top: 30px;
     text-align: center;
+    background-color: black;
     color: white;
 }
