@@ -29,3 +29,17 @@ for (i = 1; i <= 7; i++) {
     let proj = `proj${i}`
     observer.observe(document.getElementById(proj));
 }
+// wake Heroku app for the GRT Unofficial Tracker by sending trying to fetch it.
+function wakeUp() {
+    const proxyurl = 'https://warm-badlands-51415.herokuapp.com/';
+    const url = "http://webapps.regionofwaterloo.ca/api/grt-routes/api/vehiclepositions";
+    let response = fetch(proxyurl + url, {
+        headers: new Headers({
+            'X-Requested-With': 'XMLHttpRequest'
+        })
+    });
+    if (response.ok) {
+        console.log("nudged Heroku")
+    }
+}
+setTimeout(wakeUp, 1000);
