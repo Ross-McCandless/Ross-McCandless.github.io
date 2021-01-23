@@ -62,9 +62,9 @@ button:hover {
     background-color: white;
     color: #146850;
 }
-.sideprojects{
+.projects{
     text-align: center;
-    width: 320px;
+    width: 250px;
     margin-top: 30px;
     margin-bottom: 12px;
     margin-left: auto;
@@ -89,6 +89,8 @@ button:hover {
     background-color: #FFE600;
     border: 2px solid black;
     box-shadow: 0 0 0 2pt #FFE600;
+    transform: rotate(-45deg);
+    
 }
 #scrollTopBtn:hover {
     background-color: #146850;
@@ -96,6 +98,7 @@ button:hover {
     box-shadow: 0 0 0 2pt #146850;
 }
 #scrollTopBtn img{
+    transform: rotate(45deg);
     filter: invert(1);
     -webkit-filter: invert(1);
 }
