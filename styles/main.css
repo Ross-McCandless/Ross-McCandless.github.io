@@ -221,18 +221,23 @@ a {
     .frontpage {
         background-position: 50% 100%;
     }
+    .ross-footer {
+        height: 125px;
+        width: 125px;
+    }
 }
 @media only screen and (max-width: 901px) {
     .projbox:hover p{
         display: none;
     } 
 }
-#rplogo {
+.ross-footer {
     height: 10%;
     width: 10%;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 40%;
 }
 footer {
     padding-top: 30px;
