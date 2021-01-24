@@ -35,7 +35,7 @@ body::-webkit-scrollbar-thumb {
 .contactbox {
     position: absolute;
     top: 30%;
-    color: white;
+    color: whitesmoke;
     text-align: center;
     padding-bottom: 30px;
     padding-top: 30px;
@@ -44,22 +44,22 @@ body::-webkit-scrollbar-thumb {
     width: 350px;
     height: 200px;
     background-color: #146850;
-    border: 4px solid white;
+    border: 4px solid whitesmoke;
     box-shadow: 0 0 0 4pt #146850;
     border-radius: 5px;
     line-height: 35px;
 }
 button {
     background-color: #146850;
-    color: white;
+    color: whitesmoke;
     font-weight: bold;
     padding: 5px;
-    border: 3px solid white;
+    border: 3px solid whitesmoke;
     border-radius: 5px;
 }
 button:hover {
     cursor: pointer;
-    background-color: white;
+    background-color: whitesmoke;
     color: #146850;
 }
 #signbox {
@@ -68,14 +68,14 @@ button:hover {
     width: 42px;
     background-color: black;
     outline: 10px solid black;
-    color: white;
+    color: whitesmoke;
     z-index: 1;
 }
 #arrow-down {
     position: absolute;
     border-left: 20px solid black;
     border-right: 20px solid black;
-    border-top: 20px solid white;
+    border-top: 20px solid whitesmoke;
     outline: 10px solid black;
     width: 42px;
     bottom: 60px;
@@ -112,7 +112,7 @@ button:hover {
 }
 #scrollTopBtn:hover {
     background-color: #146850;
-    border: 2px solid white;
+    border: 2px solid whitesmoke;
     box-shadow: 0 0 0 2pt #146850;
 }
 #scrollTopBtn img{
@@ -183,7 +183,7 @@ a {
 }
 .projboxinfo {
     font-size: medium;
-    color: white;
+    color: whitesmoke;
     cursor: pointer;
     width: auto;
     position: relative;
@@ -233,12 +233,16 @@ a {
     height: 50px;
     width: 45px;
     padding: 5px;
-    filter: invert(1);
+    margin-top: 10px;
+    margin-left: 1px;
+    margin-right: 1px;
+    background-color: #FFE600;
+    border: 2px solid #FFE600;
+    border-radius: 15px;
 }
 .connect:hover,
 .connect:focus {
-    padding-top: 0px;
-    filter: invert(81%) sepia(10%) saturate(1573%) hue-rotate(162deg) brightness(96%) contrast(91%);
+    transform: scale(0.85);
 }
 footer {
     padding-top: 30px;
