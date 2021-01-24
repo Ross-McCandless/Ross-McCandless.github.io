@@ -1,16 +1,25 @@
 var mybutton = document.getElementById("scrollTopBtn");
+var signbox = document.getElementById("signbox");
+var arrowdown = document.getElementById("arrow-down");
 window.onscroll = function () { scrollFunction() };
 function scrollFunction() {
     if (document.body.scrollTop > screen.height || document.documentElement.scrollTop > screen.height) {
         mybutton.style.display = "block";
-    } else {
+    }
+    else if (document.body.scrollTop > (screen.height / 6) || document.documentElement.scrollTop > (screen.height / 6)) {
+        signbox.style.display = "none";
+        arrowdown.style.display = "none";
+    }
+    else {
         mybutton.style.display = "none";
     }
 }
+
 function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
+
 function callbackFunc(entries, observer) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -29,6 +38,7 @@ for (i = 1; i <= 7; i++) {
     let proj = `proj${i}`
     observer.observe(document.getElementById(proj));
 }
+/*
 // wake Heroku app for the GRT Unofficial Tracker by sending trying to fetch it.
 function wakeUp() {
     const proxyurl = 'https://warm-badlands-51415.herokuapp.com/';
@@ -43,3 +53,4 @@ function wakeUp() {
     }
 }
 setTimeout(wakeUp, 1000);
+*/
