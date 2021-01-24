@@ -62,7 +62,7 @@ button:hover {
     background-color: white;
     color: #146850;
 }
-.signbox {
+#signbox {
     position: absolute;
     bottom: 83px;
     width: 42px;
@@ -71,7 +71,7 @@ button:hover {
     color: white;
     z-index: 1;
 }
-.arrow-down {
+#arrow-down {
     position: absolute;
     border-left: 20px solid black;
     border-right: 20px solid black;
@@ -80,8 +80,6 @@ button:hover {
     width: 42px;
     bottom: 60px;
 }
-
-
 .projects {
     text-align: center;
     width: 250px;
@@ -231,18 +229,24 @@ a {
         display: none;
     } 
 }
-.ross-footer {
-    height: 10%;
-    width: 10%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 40%;
+.connect {
+    height: 50px;
+    width: 45px;
+    padding: 5px;
+    filter: invert(1);
 }
+.connect:hover,
+.connect:focus {
+    padding-top: 0px;
+    filter: invert(81%) sepia(10%) saturate(1573%) hue-rotate(162deg) brightness(96%) contrast(91%);
+}
+
 footer {
     padding-top: 30px;
     padding-bottom: 30px;
     text-align: center;
     background-color: black;
-    color: white;
+    color: whitesmoke;
+    margin-left: auto;
+    margin-right: auto;
 }
