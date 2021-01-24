@@ -148,19 +148,19 @@ button:hover {
     opacity: 0;
 }
 .child-text {
-  margin-top: 5% !important;
+    margin-top: 5% !important;
 }
 h2 {
-  font-size: 2rem;
-  color: #87CFEA;
+    font-size: 2rem;
+    color: #87CFEA;
 }
 p {
-  font-size: 1.25rem;
-  font-weight: 300;
-  color: whitesmoke;
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: whitesmoke;
 }
 a {
-  color: #286295;
+    color: #286295;
 }
 .projbox a {
     text-decoration: none;
@@ -240,7 +240,6 @@ a {
     padding-top: 0px;
     filter: invert(81%) sepia(10%) saturate(1573%) hue-rotate(162deg) brightness(96%) contrast(91%);
 }
-
 footer {
     padding-top: 30px;
     padding-bottom: 30px;
