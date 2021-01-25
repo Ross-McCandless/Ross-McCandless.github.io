@@ -1,6 +1,7 @@
 @font-face {
     font-family: Electrolize;
     src: url(Electrolize.ttf);
+    font-display: swap;
 }
 html, body{
     font-family: Electrolize, -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
