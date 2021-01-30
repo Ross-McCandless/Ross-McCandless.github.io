@@ -57,6 +57,7 @@ button {
     padding: 5px;
     border: 3px solid whitesmoke;
     border-radius: 5px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 button:hover {
     cursor: pointer;
@@ -109,7 +110,7 @@ button:hover {
     border: 2px solid black;
     box-shadow: 0 0 0 2pt #FFE600;
     transform: rotate(-45deg);
-    
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border 0.3s ease-in-out, filter 0.3s ease-in-out, -webkit-filter 0.3s ease-in-out;
 }
 #scrollTopBtn:hover {
     background-color: #146850;
@@ -238,6 +239,7 @@ a {
     background-color: #FFE600;
     border: 2px solid #FFE600;
     border-radius: 15px;
+    transition: transform 0.1s ease-in-out 0.1s;
 }
 .connect:hover,
 .connect:focus {
