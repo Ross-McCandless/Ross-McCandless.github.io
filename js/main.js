@@ -32,7 +32,7 @@ let options = {
     threshold: 0.25
 };
 let observer = new IntersectionObserver(callbackFunc, options);
-for (i = 1; i <= 7; i++) {
+for (i = 1; i <= 8; i++) {
     let proj = `proj${i}`
     observer.observe(document.getElementById(proj));
 }
