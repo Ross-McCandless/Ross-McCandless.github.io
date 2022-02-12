@@ -120,7 +120,7 @@ function initMap() {
                             resultName.innerText = $(data).find(".subpage_title_block h3 a")[0].text + " " + $(data).find(".subpage_title_block h3 span")[0].textContent.trim()
                             resultDiv.hidden = false;
                             $.ajax({
-                                url: mapQuestRequestUrl,
+                                url: proxyurl + mapQuestRequestUrl,
                                 cache: false,
                                 async: false,
                                 dataType: "json",
